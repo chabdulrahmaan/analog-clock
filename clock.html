@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Analog Clock</title>
+    <link rel="stylesheet" href="clock.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+</head>
+
+<body class="light-theme">
+    <div class="clock">
+        <div class="analog-clock">
+            <div class="hr-container">
+                <div class="hr-line"><span class="hr-line-bg"></span></div>
+                <div class="hr-line"><span class="hr-line-bg"></span></div>
+                <div class="hr-line"><span class="hr-line-bg"></span></div>
+                <div class="hr-line"><span class="hr-line-bg"></span></div>
+                <div class="hr-line"><span class="hr-line-bg"></span></div>
+                <div class="hr-line"><span class="hr-line-bg"></span></div>
+                <div class="hr-line"><span class="hr-line-bg"></span></div>
+                <div class="hr-line"><span class="hr-line-bg"></span></div>
+            </div>
+
+            <div class="hr-container">
+                <span class="hr-number" id="hr-3">3</span>
+                <span class="hr-number" id="hr-9">9</span>
+                <span class="hr-number" id="hr-6">6</span>
+                <span class="hr-number" id="hr-12">12</span>
+            </div>
+
+            <div class="clock-hands">
+                <div class="hr-hand"></div>
+                <div class="min-hand"></div>
+                <div class="sec-hand"></div>
+            </div>
+
+            <div class="clock-logo"><span>C</span>haudhary</div>
+
+            <div class="theme-btn">
+                <ion-icon class="moon" name="moon"></ion-icon>
+                <ion-icon class="sunny" name="sunny"></ion-icon>
+            </div>
+        </div>
+
+        <div class="digital-clock">
+            <div class="session">PM</div>
+            <div class="time">00:00</div>
+            <div class="date">Sun, 24 Oct, 2021</div>
+        </div>
+    </div>
+    <script src="clock.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>

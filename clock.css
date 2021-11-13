@@ -1,0 +1,289 @@
+@font-face {
+  font-family: Flaemische;
+  src: url(Flaemische-Kanzleischrift.ttf);
+}
+
+@font-face {
+  font-family: Poppins;
+  src: url(Poppins.ttf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --body-color: #e0e5eb;
+  --light-black: #777;
+  --dark-black: #07141b;
+}
+
+body.dark-theme {
+  --body-color: #07141b;
+  --dark-black: #fff;
+}
+
+body {
+  background-color: var(--body-color);
+  font-family: Poppins;
+  user-select: none;
+}
+
+.clock {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  min-height: 100vh;
+}
+
+.analog-clock {
+  width: 275px;
+  height: 275px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border: 1px solid rgb(255 255 255 / 10%);
+  box-shadow: 0em -1.2em 1.2em rgb(255 255 255 / 6%),
+    inset 0em -1.2em 1.2em rgb(255 255 255 / 6%),
+    0em 1.2em 1.2em rgb(0 0 0 / 30%), inset 0em 1.2em 1.2em rgb(0 0 0 / 30%);
+}
+
+body.dark-theme .analog-clock {
+  box-shadow: 0em -1.2em 1.2em rgb(255 255 255 / 4%),
+    inset 0em -1.2em 1.2em rgb(255 255 255 / 4%),
+    0em 1.2em 1.2em rgb(0 0 0 / 100%), inset 0em 1.2em 1.2em rgb(0 0 0 / 100%);
+}
+
+.analog-clock::before {
+  content: "";
+  position: absolute;
+  width: 13px;
+  height: 13px;
+  z-index: 100;
+  border-radius: 50%;
+  background-color: #078fff;
+  border: 2px solid var(--body-color);
+}
+
+.hr-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 255px;
+  height: 255px;
+}
+
+.hr-number {
+  position: absolute;
+  text-align: center;
+  font-weight: bold;
+  font-size: 30px;
+  color: var(--light-black);
+  width: 30px;
+}
+
+.hr-line {
+  height: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+}
+
+.hr-line-bg {
+  width: 2.5px;
+  height: 13px;
+  display: block;
+  margin-top: 10px;
+  background-color: var(--light-black);
+}
+
+.hr-line:nth-child(1) {
+  transform: rotate(30deg);
+}
+
+.hr-line:nth-child(2) {
+  transform: rotate(60deg);
+}
+
+.hr-line:nth-child(3) {
+  transform: rotate(120deg);
+}
+
+.hr-line:nth-child(4) {
+  transform: rotate(150deg);
+}
+
+.hr-line:nth-child(5) {
+  transform: rotate(210deg);
+}
+
+.hr-line:nth-child(6) {
+  transform: rotate(240deg);
+}
+
+.hr-line:nth-child(7) {
+  transform: rotate(300deg);
+}
+
+.hr-line:nth-child(8) {
+  transform: rotate(330deg);
+}
+
+.hr-number:nth-child(1) {
+  right: 0;
+}
+
+.hr-number:nth-child(2) {
+  left: 0;
+}
+
+.hr-number:nth-child(3) {
+  bottom: 0;
+}
+
+.hr-number:nth-child(4) {
+  top: 0;
+}
+
+.clock-hands {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hr-hand::before,
+.min-hand::before,
+.sec-hand::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  border-radius: 20px;
+}
+
+.hr-hand {
+  width: 6.5px;
+  height: 65px;
+  position: absolute;
+}
+
+.hr-hand::before {
+  background: #f81460;
+}
+
+.min-hand {
+  width: 4.4px;
+  height: 82px;
+  position: absolute;
+}
+
+.min-hand::before {
+  background: var(--dark-black);
+}
+
+.sec-hand {
+  width: 1.5px;
+  height: 118px;
+  position: absolute;
+}
+
+.sec-hand::before {
+  background: #078fff;
+  top: -25%;
+}
+
+.clock-logo {
+  position: absolute;
+  bottom: 75px;
+  font-family: Flaemische;
+  font-size: 18px;
+  color: #444;
+  z-index: -100;
+}
+
+body.dark-theme .clock-logo {
+  color: var(--light-black);
+}
+
+.clock-logo span {
+  color: #f81460;
+}
+
+.digital-clock {
+  margin-top: 50px;
+  width: 200px;
+  height: 100px;
+  text-align: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  align-items: center;
+}
+
+.session {
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 14px;
+  color: var(--dark-black);
+}
+
+.time {
+  font-size: 50px;
+  font-weight: bold;
+  color: var(--dark-black);
+}
+
+.date {
+  color: var(--dark-black);
+}
+
+.theme-btn {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: -2px -2px 2px rgba(255, 255, 255, 0.8),
+    inset 2px 2px 2px rgba(0, 0, 0, 0.2), 2px 2px 2px rgba(0, 0, 0, 0.2),
+    inset -2px -2px 2px rgba(255, 255, 255, 0.8);
+  transition: 0.3s;
+}
+
+.theme-btn:hover {
+  box-shadow: -2px -2px 2px rgba(255, 255, 255, 0.8),
+    inset 2px 2px 2px rgba(0, 0, 0, 0.3), 2px 2px 2px rgba(0, 0, 0, 0.3),
+    inset -2px -2px 2px rgba(255, 255, 255, 0.8);
+}
+
+body.dark-theme .theme-btn {
+  box-shadow: -2px -2px 2px rgba(255, 255, 255, 0.1), inset 2px 2px 2px #000,
+    2px 2px 2px #000, inset -2px -2px 2px rgba(255, 255, 255, 0.1);
+}
+
+ion-icon {
+  display: none;
+  font-size: 20px;
+  color: var(--dark-black);
+}
+
+body.light-theme .moon,
+body.dark-theme .sunny {
+  display: block;
+}
